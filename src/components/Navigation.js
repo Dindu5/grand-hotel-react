@@ -11,6 +11,7 @@ const NavWrapper = styled.div`
   padding: 0.6rem var(--padding);
   display: flex;
   background: var(--white);
+  z-index:4;
 
   .logo {
     width: fit-content;

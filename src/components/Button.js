@@ -1,5 +1,12 @@
-import styled from 'styled-components'
+import react from "react";
+import styled from "styled-components";
 
-const Button = styled.button `
-    margin : 30px;
-`
+const ButtonContainer = styled.button`
+  margin: 30px;
+`;
+
+function Button() {
+  return <Button></Button>;
+}
+
+export default Button;

@@ -1,6 +1,7 @@
 import React from "react";
 import Landing from "../components/Landing";
 import bg from "../assets/bg.jpg";
+import Subscription from "../parts/Subscription";
 
 function Facilities() {
   return (
@@ -12,6 +13,7 @@ function Facilities() {
         subtitle='We have it all'
 
       />
+      <Subscription />
     </div>
   );
 }

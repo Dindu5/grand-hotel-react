@@ -10,9 +10,14 @@ font-family: 'Poppins', sans-serif; */
   --nav-blue: #05042e;
   --white: #ffffff;
   --black: #000000;
+  --wheat: #fff8ee;
+  --brown: #c85807;
+  --dark-brown: #ee8a42;
+  --btn: #f8ecdb;
   --active-blue: #0a2058;
   --text-size: 0.9rem;
   --title-size: 3.3rem;
+  --subtitle-size: 1.3rem;
   --padding: 6rem;
 }
 
