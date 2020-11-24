@@ -6,6 +6,14 @@ import Clients from "../components/Clients";
 import Home1 from "../parts/Home1";
 import Needs from "../parts/Needs";
 import RoomsPreviews from "../parts/RoomsPreviews";
+import HomeFacilities from "../parts/HomeFacilities";
+
+import Img1 from "../assets/facilimg1.png";
+import Img2 from "../assets/facilimg2.png";
+import Img3 from "../assets/facilimg3.png";
+import Testimonial from "../parts/Testimonial";
+import BlogArticles from "../parts/BlogArticles";
+
 
 
 function Home() {
@@ -21,6 +29,17 @@ function Home() {
       <Home1 />
       <Needs />
       <RoomsPreviews />
+      <HomeFacilities 
+      img1={Img1}
+      img2={Img2}
+      img3={Img3}
+      title='Facilities'
+      main='We are well equipped with the Modern Facilities'
+      sub='Come explore our wide range of odern, top-notch and neat facilities'
+      other="Whether you would love to catch a few swings with your old pals or go swimming with family, never a  dull moment because we've got you."
+      />
+      <Testimonial />
+      <BlogArticles />
       <Subscription />
     </div>
   );
