@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ImageTypeTwo from "../components/ImageTypeTwo";
-// import Img1 from "../assets/facilimg1.png";
-// import Img2 from "../assets/facilimg2.png";
-// import Img3 from "../assets/facilimg3.png";
 import Toptitle from "../components/Toptitle";
 import Intro from "../components/Intro";
 

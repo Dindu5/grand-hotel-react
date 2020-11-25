@@ -6,6 +6,7 @@ import Toptitle from "../components/Toptitle";
 import img1 from "../assets/article1.png";
 import img2 from "../assets/article2.png";
 import img3 from "../assets/article3.png";
+import Button from "../components/Button";
 
 const BlogArticleWrapper = styled.section`
   padding: 2rem var(--padding);
@@ -46,6 +47,7 @@ function BlogArticles() {
           main="Browse Through our Blogs and Announcements."
           sub="Browse through our blogs and announcements for timely and inspiational stories and news from us."
         />
+        <Button title="Visit Blog" />
       </div>
     </BlogArticleWrapper>
   );

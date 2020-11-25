@@ -8,9 +8,11 @@ import user1 from "../assets/avatar1.png";
 import user2 from "../assets/avatar2.png";
 
 const TestimonialWrap = styled.section`
-  padding: var(--padding);
+  padding: 0 var(--padding);
   display: flex;
   justify-content: space-between;
+  padding-bottom: 3rem;
+
   > div {
     width: 48%;
   }

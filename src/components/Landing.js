@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const LandingWrapper = styled.div`
-
-  height: 620px;
+  height: 670px;
   width: 100%;
   background-image: url(${(props) => props.img});
   background-size: cover;
@@ -11,7 +10,6 @@ const LandingWrapper = styled.div`
   padding: var(--padding);
 
   div {
-
     transform: translateY(13rem);
     color: var(--white);
 
@@ -19,12 +17,12 @@ const LandingWrapper = styled.div`
       font-size: var(--title-size);
       font-family: var(--heading-font);
       margin: 0.5rem 0.5rem;
-      font-weight:600;
+      font-weight: 600;
     }
 
     p {
       font-size: 1.05rem;
-      margin-left:0.5rem;
+      margin-left: 0.5rem;
       font-family: var(--heading-font);
     }
   }
@@ -34,15 +32,9 @@ function Landing(props) {
   return (
     <LandingWrapper img={props.img}>
       <div>
-        <h1>
-          {props.title}
-        </h1>
-        <h1>
-          {props.secondTitle}
-        </h1>
-        <p>
-          {props.subtitle}
-        </p>
+        <h1>{props.title}</h1>
+        <h1>{props.secondTitle}</h1>
+        <p>{props.subtitle}</p>
       </div>
     </LandingWrapper>
   );
