@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "./components/Navigation";
+
 import Home from "./pages/Home";
 import Facilities from "./pages/Facilities";
 import Rooms from "./pages/Rooms";
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navigation />
+        {/* <Navigation /> */}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/facilities" exact component={Facilities} />

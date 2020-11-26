@@ -1,13 +1,40 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ImageTypeTwo from "../components/ImageTypeTwo";
 import Toptitle from "../components/Toptitle";
 import Intro from "../components/Intro";
+import Button from "../components/Button";
 
 const Wrap = styled.section`
   padding: var(--padding);
   display: flex;
   justify-content: space-between;
+
+  ${(props) =>
+    props.alternate &&
+    css`
+      flex-direction: row-reverse;
+    `}
+
+  ${(props) =>
+    props.none &&
+    css`
+      padding: 0;
+    `}
+
+  ${(props) =>
+    props.bottom &&
+    css`
+      margin-bottom: 6rem;
+    `}
+
+  ${(props) =>
+    props.partial &&
+    css`
+      padding: 0 var(--padding);
+      padding-bottom: 6rem;
+    `}
+  
 
   > .write-up {
     width: 50%;
@@ -22,12 +49,21 @@ function HomeFacilities(props) {
   let main = props.main;
   let sub = props.sub;
   let other = props.other;
+  let name = props.name;
+  let secondary = props.secondary;
+  let color = props.color;
 
   return (
-    <Wrap>
+    <Wrap
+      alternate={props.alternate}
+      none={props.none}
+      bottom={props.bottom}
+      partial={props.partial}
+    >
       <div className="write-up">
-        <Toptitle>{fourth}</Toptitle>
-        <Intro main={main} sub={sub} other={other} />
+        <Toptitle white={color}>{fourth}</Toptitle>
+        <Intro main={main} sub={sub} other={other} color={color} />
+        <Button title={name} secondary={secondary} />
       </div>
       <ImageTypeTwo img1={first} img2={second} img3={third} />
     </Wrap>

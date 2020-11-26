@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ImgWrapper = styled.div`
   position: relative;
   width: 40%;
+  margin-bottom: -3rem;
 
   img {
     width: 100%;

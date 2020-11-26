@@ -16,6 +16,7 @@ const FooterWrap = styled.footer`
     margin: 4rem var(--padding);
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
 
     .logo-area {
       display: flex;

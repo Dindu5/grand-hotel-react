@@ -22,10 +22,13 @@ import room14 from "../assets/suite6.png";
 import room15 from "../assets/suite7.png";
 import room16 from "../assets/suite8.png";
 import ExecutiveRoom from "../parts/ExecutiveRoom";
+import Navigation from "../components/Navigation";
+import Decoration from "../components/Decoration";
 
 function Rooms() {
   return (
     <div>
+      <Navigation />
       <Landing
         img={bg}
         title="Our Rooms are"
@@ -42,6 +45,7 @@ function Rooms() {
         name="Standard Twin Room"
         details="Max 2 Adults, StandardTwin Room 67m2 balcony with mini bar and free wifi"
       />
+      <Decoration />
       <RoomsDescription
         img1={room5}
         img2={room6}
