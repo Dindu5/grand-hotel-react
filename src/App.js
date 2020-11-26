@@ -7,9 +7,7 @@ import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./parts/Footer";
 
-const AppWrap = styled.div`
-  overflow-x: hidden;
-`;
+const AppWrap = styled.div``;
 
 function App() {
   return (

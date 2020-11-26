@@ -4,16 +4,24 @@ import ImageTypeTwo from "../components/ImageTypeTwo";
 import Toptitle from "../components/Toptitle";
 import Intro from "../components/Intro";
 import Button from "../components/Button";
+import { device } from "../utilities/breakpoint";
 
 const Wrap = styled.section`
   padding: var(--padding);
   display: flex;
   justify-content: space-between;
 
+  @media ${device.mobileL} {
+    flex-direction: column;
+  }
+
   ${(props) =>
     props.alternate &&
     css`
       flex-direction: row-reverse;
+      @media ${device.mobileL} {
+        flex-direction: column;
+      }
     `}
 
   ${(props) =>
@@ -38,6 +46,9 @@ const Wrap = styled.section`
 
   > .write-up {
     width: 50%;
+    @media ${device.mobileL} {
+      width: 90%;
+    }
   }
 `;
 

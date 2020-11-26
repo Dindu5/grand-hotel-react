@@ -25,6 +25,9 @@ const NavWrapper = styled.div`
       font-size: 1.3rem;
       margin-left: 0.5rem;
       color: var(--nav-blue);
+      @media ${device.mobileS} {
+        font-size: 1.1rem;
+      }
     }
   }
   .nav {
@@ -44,7 +47,7 @@ const NavWrapper = styled.div`
       width: 85vw;
       background-color: var(--brown);
       transition: all 0.5s;
-      right: 0;
+      right: -1rem;
       transform: translateX(100%);
       top: 0;
 
@@ -131,7 +134,12 @@ function Navigation() {
         </NavLink>
         <h3>Grand Hotel Nova</h3>
       </div>
-      <div className="nav" ref={(el) => (menu = el)}>
+      <div
+        className="nav"
+        ref={(el) => {
+          menu = el;
+        }}
+      >
         <NavLink activeClassName="selected" exact to="/">
           Home
         </NavLink>

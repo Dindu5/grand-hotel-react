@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+// Assets
+
 import contact from "../assets/contact.png";
+
+// Components
 import Form from "../components/Form";
 import Intro from "../components/Intro";
 import P from "../components/Paragraph";
 import Toptitle from "../components/Toptitle";
+
+// Utilities
+import { device } from "../utilities/breakpoint";
 
 const ContactWrap = styled.main`
   padding: 6rem var(--padding);
@@ -19,6 +26,12 @@ const ContactWrap = styled.main`
     padding: 6rem 4rem;
     position: relative;
     padding-left: 18.5vw;
+    @media ${device.mobileL} {
+      padding-left: 4rem;
+      margin: auto;
+      margin-top: 55vw;
+      width: 100%;
+    }
   }
 
   .aside {
@@ -28,6 +41,11 @@ const ContactWrap = styled.main`
     bottom: 50%;
     transform: translateY(50%);
     width: 45%;
+    @media ${device.mobileL} {
+      transform: translateY(-40vw) translateX(-50%);
+      width: 95%;
+      left: 50%;
+    }
     p {
       color: var(--white);
       span {

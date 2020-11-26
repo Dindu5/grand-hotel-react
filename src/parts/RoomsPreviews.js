@@ -13,14 +13,21 @@ import img8 from "../assets/suite8.png";
 import Toptitle from "../components/Toptitle";
 import Intro from "../components/Intro";
 import Button from "../components/Button";
+import { device } from "../utilities/breakpoint";
 
 const RoomsPreview = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: ${(props) => props.bottom}rem;
+  @media ${device.mobileL} {
+    flex-direction: column-reverse;
+  }
 
   > div {
     width: 48%;
+    @media ${device.mobileL} {
+      width: 90%;
+    }
   }
 `;
 

@@ -1,10 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../utilities/breakpoint";
 
 const ImgWrapper = styled.div`
   position: relative;
   width: 40%;
   margin-bottom: -3rem;
+
+  @media ${device.mobileL} {
+    width: 80%;
+    margin: auto;
+    margin-bottom: -3rem;
+  }
 
   img {
     width: 100%;

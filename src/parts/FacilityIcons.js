@@ -12,8 +12,13 @@ import icon7 from "../assets/icons/ac.png";
 import icon8 from "../assets/icons/camera.png";
 import icon9 from "../assets/icons/parking.png";
 import icon10 from "../assets/icons/dryer.png";
+
+// Components
 import P from "../components/Paragraph";
 import Toptitle from "../components/Toptitle";
+
+// Utilities
+import { device } from "../utilities/breakpoint";
 
 const IconWrapper = styled.section`
   padding: 0 var(--padding);
@@ -23,6 +28,9 @@ const IconWrapper = styled.section`
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    @media ${device.mobileL} {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     grid-gap: 3rem;
     > .box {

@@ -7,13 +7,20 @@ import img1 from "../assets/article1.png";
 import img2 from "../assets/article2.png";
 import img3 from "../assets/article3.png";
 import Button from "../components/Button";
+import { device } from "../utilities/breakpoint";
 
 const BlogArticleWrapper = styled.section`
   padding: 2rem var(--padding);
   display: flex;
   justify-content: space-between;
+  @media ${device.mobileL} {
+    flex-direction: column-reverse;
+  }
   > div {
     width: 48%;
+    @media ${device.mobileL} {
+      width: 100%;
+    }
   }
 `;
 

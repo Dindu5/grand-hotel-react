@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import Button from "../components/Button";
 import ImageTypeOne from "../components/ImageTypeOne";
 import P from "../components/Paragraph";
+import { device } from "../utilities/breakpoint";
 
 const RoomsWrap = styled.div`
   padding: 3rem var(--padding);
@@ -14,9 +15,18 @@ const RoomsWrap = styled.div`
     props.alternate &&
     css`
       flex-direction: row-reverse;
+      @media ${device.mobileL} {
+        flex-direction: column;
+      }
     `}
+  @media ${device.mobileL} {
+    flex-direction: column-reverse;
+  }
   > div {
     width: 45%;
+    @media ${device.mobileL} {
+      width: 95%;
+    }
   }
   h2 {
     font-size: var(--mini-size);

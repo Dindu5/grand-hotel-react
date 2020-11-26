@@ -10,6 +10,10 @@ import img3 from "../assets/ex3.png";
 import P from "../components/Paragraph";
 import Button from "../components/Button";
 
+// Utiities
+
+import { device } from "../utilities/breakpoint";
+
 const ExecutiveWrapper = styled.div`
   color: var(--white);
   h2 {
@@ -26,6 +30,9 @@ const ExecutiveWrapper = styled.div`
     width: 80%;
     margin: auto;
     margin-bottom: 1rem;
+    @media ${device.mobileL} {
+      width: 100%;
+    }
     .img-wrap {
       width: 30%;
       img {
@@ -40,6 +47,9 @@ const ExecutiveWrapper = styled.div`
     margin: auto;
     margin-top: 4rem;
     justify-content: space-between;
+    @media ${device.mobileL} {
+      width: 80%;
+    }
     
     p {
       

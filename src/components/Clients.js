@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logoblue.png";
 import P from "./Paragraph";
+import { device } from "../utilities/breakpoint";
 
 const Wrapper = styled.section`
   background-color: var(--wheat);
@@ -38,11 +39,17 @@ const Wrapper = styled.section`
   }
 
   .bottom {
-    display: flex;
+    display: grid;
     max-width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-between;
     margin: auto;
     margin-bottom: 1rem;
+
+    @media ${device.mobileL} {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 3rem;
+    }
   }
 
   h2 {

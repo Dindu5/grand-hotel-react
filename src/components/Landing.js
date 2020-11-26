@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../utilities/breakpoint";
 
 const LandingWrapper = styled.div`
   height: 670px;
@@ -12,6 +13,9 @@ const LandingWrapper = styled.div`
   div {
     transform: translateY(13rem);
     color: var(--white);
+    @media ${device.mobileL} {
+      transform: translateY(20rem);
+    }
 
     h1 {
       font-size: var(--title-size);

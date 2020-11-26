@@ -1,9 +1,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { device } from "../utilities/breakpoint";
 
 const ImageContainer = styled.div`
   position: relative;
+
+  width: max-content;
   margin-bottom: 1.5rem;
+  @media ${device.mobileL} {
+    margin: auto;
+  }
 
   img {
     width: 100%;

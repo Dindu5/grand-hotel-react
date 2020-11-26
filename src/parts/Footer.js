@@ -3,6 +3,7 @@ import styled from "styled-components";
 import bg from "../assets/fbg.jpg";
 import logo from "../assets/logowhite.svg";
 import { Link } from "react-router-dom";
+import { device } from "../utilities/breakpoint";
 
 const FooterWrap = styled.footer`
   background-image: url(${bg});
@@ -17,6 +18,10 @@ const FooterWrap = styled.footer`
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-gap: 1rem;
+    @media ${device.mobileL} {
+      grid-template-columns: 2fr 1fr;
+      grid-row-gap: 3rem;
+    }
 
     .logo-area {
       display: flex;

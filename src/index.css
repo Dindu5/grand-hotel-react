@@ -45,7 +45,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   :root {
-    --padding: 3rem;
+    --padding: 5rem;
   }
   html {
     font-size: 86%;

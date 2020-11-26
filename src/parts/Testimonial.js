@@ -6,15 +6,22 @@ import Testimony from "../components/Testimony";
 import Toptitle from "../components/Toptitle";
 import user1 from "../assets/avatar1.png";
 import user2 from "../assets/avatar2.png";
+import { device } from "../utilities/breakpoint";
 
 const TestimonialWrap = styled.section`
   padding: 0 var(--padding);
   display: flex;
   justify-content: space-between;
   padding-bottom: 3rem;
+  @media ${device.mobileL} {
+    flex-direction: column;
+  }
 
   > div {
     width: 48%;
+    @media ${device.mobileL} {
+      width: 100%;
+    }
   }
 `;
 
