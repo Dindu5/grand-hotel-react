@@ -71,6 +71,7 @@ function Rooms() {
     TweenMax.to(body, 0.3, {
       css: {
         opacity: "1",
+        filter: "blur(0)",
         pointerEvents: "auto",
         ease: Power4.easeInOut,
       },

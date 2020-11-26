@@ -5,11 +5,12 @@ const ToogleBtn = styled.div`
   position: absolute;
   z-index: 3;
   cursor: pointer;
-  right: 4rem;
-  top: 1.5rem;
+  right: var(--padding);
+  top: 50%;
+  transform: translateY(-50%);
   display: none;
 
-  @media ${device.mobileS} {
+  @media ${device.mobileL} {
     display: block;
   }
 
@@ -18,19 +19,22 @@ const ToogleBtn = styled.div`
     height: 0.3rem;
     background: var(--active-blue);
     transition: all 0.6s ease-out;
-    margin-bottom: 0.3rem;
+    border-radius: 5px;
+  }
+  div:nth-child(2) {
+    margin: 0.3rem 0;
   }
 
-  &.close {
+  &.open {
     div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translateY(12px) translateX(7px);
     }
     div:nth-child(2) {
-      transform: translateX(10px);
+      transform: translateX(50px);
       opacity: 0;
     }
     div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, 5px);
+      transform: rotate(-45deg) translateY(-5px) translateX(-1px);
     }
   }
 `;

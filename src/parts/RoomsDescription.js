@@ -63,7 +63,7 @@ function RoomsDescription(props) {
         <h2>{name}</h2>
         <P>{details}</P>
         <div className="action">
-          <h5>Price : ${price} / night</h5>
+          <h5>${price} / night</h5>
           <Button title={title} />
         </div>
       </div>

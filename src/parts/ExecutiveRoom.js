@@ -81,7 +81,7 @@ function ExecutiveRoom() {
             recusandae.
           </P>
           <div className="action">
-            <h5>Price: $5000 / night</h5>
+            <h5>$5000 / night</h5>
             <Button title="Book Now" secondary />
           </div>
         </div>

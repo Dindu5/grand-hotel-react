@@ -65,11 +65,12 @@ function Home() {
     TweenMax.to(body, 0.3, {
       css: {
         opacity: "1",
+        filter: "blur(0)",
         pointerEvents: "auto",
         transitionDelay: "0.8",
         ease: Power4.easeInOut,
       },
-    }).delay(3);
+    }).delay(-3);
     return () => {
       TweenMax.to(body, 0.5, {
         css: {
