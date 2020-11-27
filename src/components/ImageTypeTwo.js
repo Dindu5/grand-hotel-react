@@ -11,12 +11,14 @@ const ImgWrapper = styled.div`
     width: 80%;
     margin: auto;
     margin-bottom: -3rem;
+    margin-top: 2.5rem;
   }
 
   img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    box-shadow: 0.7px 0.7px 10px #0000004f;
   }
   > div {
     display: flex;

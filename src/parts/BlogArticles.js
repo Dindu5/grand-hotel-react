@@ -22,6 +22,12 @@ const BlogArticleWrapper = styled.section`
       width: 100%;
     }
   }
+  > div:nth-child(1) {
+    @media ${device.mobileL} {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 function BlogArticles() {

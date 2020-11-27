@@ -20,13 +20,16 @@ const NeedWrap = styled.section`
   > div {
     width: 48%;
     @media ${device.mobileL} {
-      width: 90%;
+      width: 100%;
     }
   }
 
   .need-images {
     display: flex;
     justify-content: space-between;
+    @media ${device.mobileL} {
+      margin: 2rem 0;
+    }
 
     .img-contain {
       width: 30%;
@@ -64,9 +67,9 @@ function Needs() {
       </div>
       <div>
         <Intro
-          main="Best-in-class Service"
-          sub="Welcome to Grand Hotel Nova We offer class, comfort, hospitality and excitement. Welcome to paradise"
-          other="Welcome to Grand Hotel Nova We offer class, comfort, hospitality and excitement. Welcome to paradise"
+          main="We Anticipate Your Needs"
+          sub="At Grand Hotel Nova, we make sure that all you deserve in a home away from home is available"
+          other="From lush green serene environments to the beautiful and healthy ambience in our rooms, we make it worth evry while"
         />
       </div>
     </NeedWrap>

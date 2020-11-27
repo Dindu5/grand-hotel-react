@@ -4,6 +4,7 @@ import bg from "../assets/fbg.jpg";
 import logo from "../assets/logowhite.svg";
 import { Link } from "react-router-dom";
 import { device } from "../utilities/breakpoint";
+import SocialIcons from "../components/SocialIcons";
 
 const FooterWrap = styled.footer`
   background-image: url(${bg});
@@ -36,6 +37,7 @@ const FooterWrap = styled.footer`
         font-size: 1.3rem;
         font-weight: 500;
         font-family: var(--title-font);
+        color: var(--brown);
         span {
           font-weight: 700;
         }
@@ -45,6 +47,7 @@ const FooterWrap = styled.footer`
       font-weight: 600;
       margin-bottom: 1.5rem;
       font-size: 1.2rem;
+      color: var(--brown);
     }
 
     a {
@@ -67,10 +70,17 @@ const FooterWrap = styled.footer`
     justify-content: space-between;
     padding: 1.7rem var(--padding);
     height: fit-content;
+    @media ${device.mobileL} {
+      flex-direction: column;
+      align-items: center;
+    }
 
     p {
       color: var(--nav-bue);
       font-size: var(--text-size);
+      @media ${device.mobileL} {
+        margin-bottom: 1rem;
+      }
     }
     a {
       text-decoration: none;
@@ -95,7 +105,9 @@ function Footer() {
           <p>8 - 22016, Nova, Lago di Como</p>
           <p>Italia</p>
           <p>P.IVA 00349270</p>
-          <div className="social-icons">Social Icons</div>
+          <div className="social-icons">
+            <SocialIcons />
+          </div>
         </div>
         <div>
           <h6>Contact Us</h6>

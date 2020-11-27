@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import { device } from "../utilities/breakpoint";
 
 const Wrap = styled.section`
-  padding: var(--padding);
+  padding: 6rem var(--padding);
   display: flex;
   justify-content: space-between;
 

@@ -9,6 +9,7 @@ import contact from "../assets/contact.png";
 import Form from "../components/Form";
 import Intro from "../components/Intro";
 import P from "../components/Paragraph";
+import SocialIcons from "../components/SocialIcons";
 import Toptitle from "../components/Toptitle";
 
 // Utilities
@@ -29,8 +30,9 @@ const ContactWrap = styled.main`
     @media ${device.mobileL} {
       padding-left: 4rem;
       margin: auto;
-      margin-top: 55vw;
       width: 100%;
+      margin-top: -4rem;
+      z-index:-1;
     }
   }
 
@@ -41,8 +43,14 @@ const ContactWrap = styled.main`
     bottom: 50%;
     transform: translateY(50%);
     width: 45%;
+    z-index: 2;
+    @media ${device.tablet} {
+      padding 5rem 4vw;
+    }
     @media ${device.mobileL} {
-      transform: translateY(-40vw) translateX(-50%);
+      position: relative;
+      padding 5rem 3rem;
+      transform: translateY(0) translateX(-50%);
       width: 95%;
       left: 50%;
     }
@@ -59,9 +67,6 @@ function ContactBox() {
   return (
     <ContactWrap>
       <div className="contact-items">
-        <div className="main">
-          <Form />
-        </div>
         <div className="aside">
           <Toptitle white>Contact Us</Toptitle>
           <Intro
@@ -77,6 +82,10 @@ function ContactBox() {
             <span>Italia</span>
           </P>
           <P>P.IVA 00348270133</P>
+          <SocialIcons />
+        </div>
+        <div className="main">
+          <Form />
         </div>
       </div>
     </ContactWrap>

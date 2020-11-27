@@ -9,7 +9,7 @@ import img4 from "../assets/aboutimg4.png";
 import { device } from "../utilities/breakpoint";
 
 const AboutWrap = styled.section`
-  padding: var(--padding);
+  padding: 6rem var(--padding);
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
@@ -22,7 +22,7 @@ const AboutWrap = styled.section`
     width: 50%;
 
     @media ${device.mobileL} {
-      width: 90%;
+      width: 100%;
     }
   }
 
@@ -31,6 +31,9 @@ const AboutWrap = styled.section`
     display: flex;
     justify-content: space-between;
     margin: auto;
+    @media ${device.mobileL} {
+      margin-top: 1rem;
+    }
 
     .img-one {
       width: 31%;

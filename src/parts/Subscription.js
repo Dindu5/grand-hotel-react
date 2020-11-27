@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Intro from "../components/Intro";
 import bg from "../assets/sbg.png";
+import { device } from "../utilities/breakpoint";
 
 const Wrapper = styled.section`
   padding: 4rem var(--padding);
@@ -9,9 +10,16 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media ${device.mobileL} {
+    flex-direction: column;
+    text-align: center;
+  }
 
   div {
     width: 40%;
+    @media ${device.mobileS} {
+      width: 80%;
+    }
   }
 
   form {
@@ -33,7 +41,7 @@ const Wrapper = styled.section`
       font-size: var(--text-size);
       outline: none;
       border: none;
-      background-color: yellow;
+      background-color: var(--btn);
       font-weight: 600;
     }
   }

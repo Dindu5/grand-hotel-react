@@ -33,11 +33,21 @@ const ExecutiveWrapper = styled.div`
     @media ${device.mobileL} {
       width: 100%;
     }
+    @media ${device.mobileS} {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
     .img-wrap {
       width: 30%;
+      @media ${device.mobileS} {
+        width: 90%;
+        margin:auto;
+        margin-bottom: 2rem;
+      }
       img {
         width: 100%;
         height: auto;
+        box-shadow: 0.2px 0.2px 10px #c8570752;
       }
     }
   }
@@ -50,9 +60,14 @@ const ExecutiveWrapper = styled.div`
     @media ${device.mobileL} {
       width: 80%;
     }
+    @media ${device.mobileS} {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 2rem;
+    }
+    
     
     p {
-      
       flex: 1;
     }
     .action {

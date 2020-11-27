@@ -27,6 +27,7 @@ const ToogleBtn = styled.div`
 
   &.open {
     div:nth-child(1) {
+      background-color: var(--brown);
       transform: rotate(45deg) translateY(12px) translateX(7px);
     }
     div:nth-child(2) {
@@ -34,6 +35,7 @@ const ToogleBtn = styled.div`
       opacity: 0;
     }
     div:nth-child(3) {
+      background-color: var(--brown);
       transform: rotate(-45deg) translateY(-5px) translateX(-1px);
     }
   }

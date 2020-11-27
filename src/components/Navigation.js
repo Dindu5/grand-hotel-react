@@ -45,7 +45,7 @@ const NavWrapper = styled.div`
       position: absolute;
       height: 100vh;
       width: 85vw;
-      background-color: var(--brown);
+      background-color: var(--nav-blue);
       transition: all 0.5s;
       right: -1rem;
       transform: translateX(100%);
@@ -93,7 +93,7 @@ const NavWrapper = styled.div`
         transition-timing-function: ease-out;
         @media ${device.mobileL} {
           z-index: 1;
-          background: var(--nav-blue);
+          background: var(--brown);
           height: 3px;
         }
       }

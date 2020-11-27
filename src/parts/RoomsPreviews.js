@@ -1,7 +1,14 @@
 import React from "react";
-import DarkPageWrap from "../components/DarkPageWrap";
 import styled from "styled-components";
+
+// Components
+import DarkPageWrap from "../components/DarkPageWrap";
 import ImageTypeOne from "../components/ImageTypeOne";
+import Toptitle from "../components/Toptitle";
+import Intro from "../components/Intro";
+import Button from "../components/Button";
+
+// Assets
 import img1 from "../assets/suite1.png";
 import img2 from "../assets/suite2.png";
 import img3 from "../assets/suite3.png";
@@ -10,9 +17,8 @@ import img5 from "../assets/suite5.png";
 import img6 from "../assets/suite6.png";
 import img7 from "../assets/suite7.png";
 import img8 from "../assets/suite8.png";
-import Toptitle from "../components/Toptitle";
-import Intro from "../components/Intro";
-import Button from "../components/Button";
+
+// Utilities
 import { device } from "../utilities/breakpoint";
 
 const RoomsPreview = styled.div`
@@ -26,7 +32,18 @@ const RoomsPreview = styled.div`
   > div {
     width: 48%;
     @media ${device.mobileL} {
-      width: 90%;
+      width: 100%;
+    }
+  }
+  > .room {
+    margin: auto;
+    @media ${device.mobileL} {
+      width: 80%;
+      margin-top: 2rem;
+      margin: auto;
+    }
+    @media ${device.mobileS} {
+      width: 95%;
     }
   }
 `;
@@ -35,6 +52,7 @@ const RoomDesc = styled.div`
   display: flex;
   justify-content: space-between;
   color: var(--white);
+  margin-top: 2rem;
 
   h5 {
     font-family: var(--text-color);
@@ -43,6 +61,8 @@ const RoomDesc = styled.div`
   }
   p {
     font-size: var(--subtitle-font);
+    color: var(--brown);
+    font-family: var(--heading-font);
   }
 `;
 
@@ -50,7 +70,7 @@ function RoomsPreviews() {
   return (
     <DarkPageWrap>
       <RoomsPreview bottom="5">
-        <div>
+        <div className="room">
           <ImageTypeOne img1={img1} img2={img2} img3={img3} img4={img4} />
           <RoomDesc>
             <h5>Standard Twin Room</h5>
@@ -70,7 +90,7 @@ function RoomsPreviews() {
       </RoomsPreview>
 
       <RoomsPreview>
-        <div>
+        <div className="room">
           <ImageTypeOne img1={img5} img2={img6} img3={img7} img4={img8} />
           <RoomDesc>
             <h5>Single Deluxe Room</h5>

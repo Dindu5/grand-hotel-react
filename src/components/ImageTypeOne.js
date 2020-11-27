@@ -4,16 +4,16 @@ import { device } from "../utilities/breakpoint";
 
 const ImageContainer = styled.div`
   position: relative;
-
-  width: max-content;
   margin-bottom: 1.5rem;
   @media ${device.mobileL} {
     margin: auto;
+    margin-top: 2.5rem;
   }
 
   img {
     width: 100%;
     height: auto;
+    box-shadow: 0.7px 0.7px 10px #0000004f;
   }
 
   .image-boxes {
@@ -23,11 +23,18 @@ const ImageContainer = styled.div`
     top: 70%;
     left: 1rem;
     width: 100%;
+    @media ${device.mobileL} {
+      width: 104%;
+      left: -2%;
+    }
     ${(props) =>
       props.alternate &&
       css`
         right: 1rem;
         left: auto;
+        @media ${device.mobileL} {
+          right: -2%;
+        }
       `}
 
     .image-box {

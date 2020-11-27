@@ -15,6 +15,7 @@ const TestimonialWrap = styled.section`
   padding-bottom: 3rem;
   @media ${device.mobileL} {
     flex-direction: column;
+    margin-top: 1rem;
   }
 
   > div {

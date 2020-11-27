@@ -9,6 +9,7 @@ const LandingWrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   padding: var(--padding);
+  background-position: center;
 
   div {
     transform: translateY(13rem);
