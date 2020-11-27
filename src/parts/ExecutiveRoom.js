@@ -69,10 +69,16 @@ const ExecutiveWrapper = styled.div`
     
     p {
       flex: 1;
+
     }
     .action {
-       
       width: fit-content;
+      @media ${device.mobileS} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
       h5 {
         color: var(--dark-brown);
         font-size: var(--subtitle-size);

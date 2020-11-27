@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { device } from "../utilities/breakpoint";
 
 const PageLoad = styled.div`
   position: fixed;
@@ -43,9 +44,16 @@ const PageLoad = styled.div`
     overflow: hidden;
     height: 7vw;
     width: 14vw;
+    @media ${device.mobileL} {
+      height: 15vw;
+      width: 35vw;
+    }
 
     img {
       height: 7vw;
+      @media ${device.mobileL} {
+        height: 15vw;
+      }
     }
   }
   .text {
@@ -59,6 +67,9 @@ const PageLoad = styled.div`
     opacity: 0;
     font-family: var(--title-font);
     color: var(--brown);
+    @media ${device.mobileL} {
+      font-size: 10vw;
+    }
   }
 `;
 

@@ -1,6 +1,7 @@
 import React from "react";
-import { TweenMax, TimelineMax, Power3, Power4, Power2 } from "gsap";
+import { TimelineMax, Power3, Power2 } from "gsap";
 import { useRef, useEffect } from "react";
+// import TweenMax, Power4
 
 // Parts
 
@@ -27,9 +28,9 @@ import Navigation from "../components/Navigation";
 import Main from "../components/Body";
 import PageLoad from "../components/PageLoad";
 
-function Home() {
+function Home(props) {
   let screen = useRef(null);
-  let body = useRef(null);
+  //  let body = useRef(null);
   useEffect(() => {
     console.log(screen.children[1].firstElementChild);
     var tl = new TimelineMax();
@@ -62,39 +63,28 @@ function Home() {
       delay: -0.6,
     });
     tl.set(screen, { left: "-100%" });
-    TweenMax.to(body, 0.3, {
-      css: {
-        opacity: "1",
-        filter: "blur(0)",
-        pointerEvents: "auto",
-        transitionDelay: "0.8",
-        ease: Power4.easeInOut,
-      },
-    }).delay(-3);
-    return () => {
-      TweenMax.to(body, 0.5, {
-        css: {
-          opacity: "1",
-          pointerEvents: "none",
-        },
-      });
-    };
+    // TweenMax.to(body, 0.3, {
+    //   css: {
+    //     opacity: "1",
+    //     filter: "blur(0)",
+    //     pointerEvents: "auto",
+    //     transitionDelay: "0.8",
+    //     ease: Power4.easeInOut,
+    //   },
+    // }).delay(-3);
+    // return () => {
+    //   TweenMax.to(body, 0.5, {
+    //     css: {
+    //       opacity: "1",
+    //       pointerEvents: "none",
+    //     },
+    //   });
+    // };
   });
 
   return (
     <div>
-      <PageLoad>
-        <div ref={(el) => (screen = el)}>
-          <div className="img">
-            <img src={logo} alt="Grand Hotel Nova" />
-          </div>
-          <div className="text">
-            <h1>HOME</h1>
-          </div>
-        </div>
-      </PageLoad>
-
-      <Main ref={(el) => (body = el)}>
+      <Main className="main">
         <Navigation />
         <Landing
           img={bg}
@@ -120,6 +110,16 @@ function Home() {
         <BlogArticles />
         <Subscription />
       </Main>
+      <PageLoad>
+        <div ref={(el) => (screen = el)}>
+          <div className="img">
+            <img src={logo} alt="Grand Hotel Nova" />
+          </div>
+          <div className="text">
+            <h1>HOME</h1>
+          </div>
+        </div>
+      </PageLoad>
     </div>
   );
 }

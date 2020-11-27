@@ -23,11 +23,22 @@ const FooterWrap = styled.footer`
       grid-template-columns: 2fr 1fr;
       grid-row-gap: 3rem;
     }
+    @media ${device.mobileS} {
+      grid-template-columns: 2fr;
+      grid-row-gap: 3rem;
+      align-items: center;
+      text-align: center;
+    }
 
     .logo-area {
       display: flex;
       align-items: center;
       margin-bottom: 1.3rem;
+      @media ${device.mobileL} {
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       img {
         width: 2.5rem;

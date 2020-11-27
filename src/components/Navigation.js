@@ -39,22 +39,31 @@ const NavWrapper = styled.div`
     @media ${device.mobileL} {
       display: flex;
       flex-direction: column;
-      padding: 5rem;
       align-items: center;
       justify-content: space-evenly;
       position: absolute;
-      height: 100vh;
-      width: 85vw;
+      overflow: hidden;
+      width: 89vw;
+      height: 0;
+      padding: 0;
       background-color: var(--nav-blue);
       transition: all 0.5s;
-      right: -1rem;
-      transform: translateX(100%);
-      top: 0;
+      border-radius: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 3.8rem;
 
       &.open {
-        right: 0;
-        left: auto;
-        transform: translateX(0%);
+        height: 50vh;
+        padding: 3rem;
+        a {
+          font-size: var(--subtitle-size);
+          height: max-content;
+
+          &:before {
+            height: 3px;
+          }
+        }
       }
     }
 
@@ -62,6 +71,7 @@ const NavWrapper = styled.div`
       margin-left: 3rem;
       font-size: var(--text-size);
       font-family: var(--text-font);
+
       font-weight: 700;
       text-decoration: none;
       color: var(--black);
@@ -72,7 +82,10 @@ const NavWrapper = styled.div`
         width: max-content;
         z-index: 3;
         color: var(--wheat);
-        font-size: var(--subtitle-size);
+
+        margin-left: 0;
+        height: 0;
+        font-size: 0;
       }
 
       &:before {
@@ -89,12 +102,13 @@ const NavWrapper = styled.div`
         transition-property: left, right;
         -webkit-transition-duration: 0.3s;
         transition-duration: 0.3s;
+
         -webkit-transition-timing-function: ease-out;
         transition-timing-function: ease-out;
         @media ${device.mobileL} {
           z-index: 1;
           background: var(--brown);
-          height: 3px;
+          height: 0;
         }
       }
       &.selected:before {

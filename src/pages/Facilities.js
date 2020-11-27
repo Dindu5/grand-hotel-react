@@ -40,7 +40,7 @@ const Bg = styled.section`
 
 function Facilities() {
   return (
-    <div>
+    <div className="main">
       <Navigation />
       <Landing
         img={bg}

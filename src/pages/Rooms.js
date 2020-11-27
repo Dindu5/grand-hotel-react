@@ -1,6 +1,7 @@
 import React from "react";
-import { TweenMax, TimelineMax, Power3, Power4, Power2 } from "gsap";
+import { TimelineMax, Power3, Power2 } from "gsap";
 import { useRef, useEffect } from "react";
+// import TweenMax , Power4
 
 // Parts
 import Subscription from "../parts/Subscription";
@@ -36,9 +37,7 @@ import logo from "../assets/logowhite.svg";
 
 function Rooms() {
   let screen = useRef(null);
-  let body = useRef(null);
   useEffect(() => {
-    console.log(screen.children[1].firstElementChild);
     var tl = new TimelineMax();
     tl.to(screen, {
       duration: 1.2,
@@ -58,7 +57,7 @@ function Rooms() {
         screen.children[1].firstElementChild,
       ],
       0.6,
-      { y: -80, ease: Power2.easeInOut },
+      { y: -180, ease: Power2.easeOut },
       0.4
     );
     tl.to(screen, {
@@ -68,22 +67,22 @@ function Rooms() {
       delay: 0.5,
     });
     tl.set(screen, { left: "-100%" });
-    TweenMax.to(body, 0.3, {
-      css: {
-        opacity: "1",
-        filter: "blur(0)",
-        pointerEvents: "auto",
-        ease: Power4.easeInOut,
-      },
-    }).delay(3);
-    return () => {
-      TweenMax.to(body, 0.5, {
-        css: {
-          opacity: "0",
-          pointerEvents: "none",
-        },
-      });
-    };
+    // TweenMax.to(body, 0.3, {
+    //   css: {
+    //     opacity: "1",
+    //     filter: "blur(0)",
+    //     pointerEvents: "auto",
+    //     ease: Power4.easeInOut,
+    //   },
+    // }).delay(3);
+    // return () => {
+    //   TweenMax.to(body, 0.5, {
+    //     css: {
+    //       opacity: "0",
+    //       pointerEvents: "none",
+    //     },
+    //   });
+    // };
   });
 
   return (
@@ -98,7 +97,7 @@ function Rooms() {
           </div>
         </div>
       </PageLoad>
-      <Main ref={(el) => (body = el)}>
+      <Main className="main">
         <Navigation />
         <Landing
           img={bg}

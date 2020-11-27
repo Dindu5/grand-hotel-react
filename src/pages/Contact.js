@@ -6,7 +6,7 @@ import ContactBox from "../parts/ContactBox";
 
 function Contact() {
   return (
-    <div>
+    <div className="main">
       <Navigation />
       <Landing img={bg} title="We Are always" secondTitle="Ready to help you" />
       <ContactBox />
