@@ -2,10 +2,10 @@ import React from "react";
 import Toptitle from "../components/Toptitle";
 import styled from "styled-components";
 import Intro from "../components/Intro";
-import img1 from "../assets/aboutimg1.png";
-import img2 from "../assets/aboutimg2.png";
-import img3 from "../assets/aboutimg3.png";
-import img4 from "../assets/aboutimg4.png";
+import img1 from "../assets/aboutimg1.jpg";
+import img2 from "../assets/aboutimg2.jpg";
+import img3 from "../assets/aboutimg3.jpg";
+import img4 from "../assets/aboutimg4.jpg";
 import { device } from "../utilities/breakpoint";
 
 const AboutWrap = styled.section`

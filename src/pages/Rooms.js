@@ -1,7 +1,6 @@
 import React from "react";
-import { TimelineMax, Power3, Power2 } from "gsap";
+import { TimelineMax, Power3, Power2, TweenMax, Power4 } from "gsap";
 import { useRef, useEffect } from "react";
-// import TweenMax , Power4
 
 // Parts
 import Subscription from "../parts/Subscription";
@@ -17,16 +16,16 @@ import PageLoad from "../components/PageLoad";
 
 // Assets
 import bg from "../assets/bg1.jpg";
-import room1 from "../assets/room1.png";
-import room2 from "../assets/room2.png";
-import room3 from "../assets/room3.png";
-import room4 from "../assets/room4.png";
-import room5 from "../assets/room5.png";
-import room6 from "../assets/room6.png";
-import room7 from "../assets/room7.png";
-import room8 from "../assets/room8.png";
-import room9 from "../assets/suite1.png";
-import room10 from "../assets/suite2.png";
+import room1 from "../assets/room1.jpg";
+import room2 from "../assets/room2.jpg";
+import room3 from "../assets/room3.jpg";
+import room4 from "../assets/room4.jpg";
+import room5 from "../assets/room5.jpg";
+import room6 from "../assets/room6.jpg";
+import room7 from "../assets/room7.jpg";
+import room8 from "../assets/room8.jpg";
+import room9 from "../assets/suite1.jpg";
+import room10 from "../assets/suite2.jpg";
 import room11 from "../assets/suite3.png";
 import room12 from "../assets/suite4.png";
 import room13 from "../assets/suite5.png";
@@ -37,8 +36,11 @@ import logo from "../assets/logowhite.svg";
 
 function Rooms() {
   let screen = useRef(null);
+  let body = useRef(null);
+
   useEffect(() => {
     var tl = new TimelineMax();
+    console.log(screen.children[1]);
     tl.to(screen, {
       duration: 1.2,
       width: "100%",
@@ -47,18 +49,15 @@ function Rooms() {
     });
     tl.staggerFrom(
       [screen.children[0], screen.children[1]],
-      0.6,
+      0.8,
       { height: 0, ease: Power2.easeInOut },
-      0.2
+      0.4
     );
     tl.staggerTo(
-      [
-        screen.children[0].firstElementChild,
-        screen.children[1].firstElementChild,
-      ],
+      [screen.children[0], screen.children[1]],
       0.6,
-      { y: -180, ease: Power2.easeOut },
-      0.4
+      { width: 0, ease: Power2.easeOut, delay: 0.5 },
+      0.1
     );
     tl.to(screen, {
       duration: 1,
@@ -67,37 +66,27 @@ function Rooms() {
       delay: 0.5,
     });
     tl.set(screen, { left: "-100%" });
-    // TweenMax.to(body, 0.3, {
-    //   css: {
-    //     opacity: "1",
-    //     filter: "blur(0)",
-    //     pointerEvents: "auto",
-    //     ease: Power4.easeInOut,
-    //   },
-    // }).delay(3);
-    // return () => {
-    //   TweenMax.to(body, 0.5, {
-    //     css: {
-    //       opacity: "0",
-    //       pointerEvents: "none",
-    //     },
-    //   });
-    // };
+    TweenMax.to(body, 0.6, {
+      css: {
+        opacity: "1",
+        filter: "blur(0)",
+        pointerEvents: "auto",
+        ease: Power4.easeInOut,
+      },
+    }).delay(-3);
+    return () => {
+      TweenMax.to(body, 0.6, {
+        css: {
+          opacity: "0",
+          pointerEvents: "none",
+        },
+      });
+    };
   });
 
   return (
     <div>
-      <PageLoad>
-        <div ref={(el) => (screen = el)}>
-          <div className="img">
-            <img src={logo} alt="Grand Hotel Nova" />
-          </div>
-          <div className="text">
-            <h1>Contact</h1>
-          </div>
-        </div>
-      </PageLoad>
-      <Main className="main">
+      <Main ref={(el) => (body = el)}>
         <Navigation />
         <Landing
           img={bg}
@@ -161,6 +150,16 @@ function Rooms() {
         <ExecutiveRoom />
         <Subscription />
       </Main>
+      <PageLoad>
+        <div ref={(el) => (screen = el)}>
+          <div className="img">
+            <img src={logo} alt="Grand Hotel Nova" />
+          </div>
+          <div className="text">
+            <h1>Contact</h1>
+          </div>
+        </div>
+      </PageLoad>
     </div>
   );
 }

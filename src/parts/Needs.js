@@ -1,9 +1,9 @@
 import React from "react";
 import Intro from "../components/Intro";
 import styled from "styled-components";
-import img1 from "../assets/needimg1.png";
-import img2 from "../assets/needimg2.png";
-import img3 from "../assets/needimg3.png";
+import img1 from "../assets/needimg1.jpg";
+import img2 from "../assets/needimg2.jpg";
+import img3 from "../assets/needimg3.jpg";
 import { device } from "../utilities/breakpoint";
 
 const NeedWrap = styled.section`

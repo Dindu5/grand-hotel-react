@@ -9,8 +9,8 @@ import Intro from "../components/Intro";
 import Button from "../components/Button";
 
 // Assets
-import img1 from "../assets/suite1.png";
-import img2 from "../assets/suite2.png";
+import img1 from "../assets/suite1.jpg";
+import img2 from "../assets/suite2.jpg";
 import img3 from "../assets/suite3.png";
 import img4 from "../assets/suite4.png";
 import img5 from "../assets/suite5.png";

@@ -11,19 +11,6 @@ const PageLoad = styled.div`
   z-index: 10;
   pointer-events: none;
 
-  ${(props) =>
-    props.contact &&
-    css`
-      > div {
-        position: relative;
-        padding-top: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
-        background-color: #e4cb58;
-        width: 100%;
-        height: 0%;
-      }
-    `}
   > div {
     position: relative;
     padding-top: 0px;
@@ -37,6 +24,21 @@ const PageLoad = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  ${(props) =>
+    props.contact &&
+    css`
+      > div {
+        
+        background-color: #05042e;
+       `}
+  ${(props) =>
+    props.last &&
+    css`
+        > div {
+          
+          background-color: #c85807;
+          `}
+
   .img {
     margin-left: auto;
     margin-right: auto;
@@ -44,6 +46,7 @@ const PageLoad = styled.div`
     overflow: hidden;
     height: 7vw;
     width: 14vw;
+
     @media ${device.mobileL} {
       height: 15vw;
       width: 35vw;
@@ -67,6 +70,11 @@ const PageLoad = styled.div`
     opacity: 0;
     font-family: var(--title-font);
     color: var(--brown);
+    ${(props) =>
+      props.last &&
+      css`
+        color: var(--nav-blue);
+      `}
     @media ${device.mobileL} {
       font-size: 10vw;
     }

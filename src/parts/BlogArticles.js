@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Blog from "../components/Blog";
 import Intro from "../components/Intro";
 import Toptitle from "../components/Toptitle";
-import img1 from "../assets/article1.png";
-import img2 from "../assets/article2.png";
-import img3 from "../assets/article3.png";
+import img1 from "../assets/article1.jpg";
+import img2 from "../assets/article2.jpg";
+import img3 from "../assets/article3.jpg";
 import Button from "../components/Button";
 import { device } from "../utilities/breakpoint";
 

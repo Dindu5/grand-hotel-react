@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Assets
 
-import contact from "../assets/contact.png";
+import contact from "../assets/contact.jpg";
 
 // Components
 import Form from "../components/Form";

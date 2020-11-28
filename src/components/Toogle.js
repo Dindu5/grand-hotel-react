@@ -31,7 +31,7 @@ const ToogleBtn = styled.div`
       transform: rotate(45deg) translateY(12px) translateX(7px);
     }
     div:nth-child(2) {
-      transform: translateX(50px);
+      transform: translateX(-50px);
       opacity: 0;
     }
     div:nth-child(3) {

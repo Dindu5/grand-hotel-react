@@ -4,9 +4,9 @@ import DarkPageWrap from "../components/DarkPageWrap";
 
 // Assets
 
-import img1 from "../assets/ex1.png";
-import img2 from "../assets/ex2.png";
-import img3 from "../assets/ex3.png";
+import img1 from "../assets/ex1.jpg";
+import img2 from "../assets/ex2.jpg";
+import img3 from "../assets/ex3.jpg";
 import P from "../components/Paragraph";
 import Button from "../components/Button";
 
@@ -47,6 +47,7 @@ const ExecutiveWrapper = styled.div`
       img {
         width: 100%;
         height: auto;
+        border-radius: 5px;
         box-shadow: 0.2px 0.2px 10px #c8570752;
       }
     }

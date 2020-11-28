@@ -4,9 +4,8 @@ import Home from "./pages/Home";
 import Facilities from "./pages/Facilities";
 import Rooms from "./pages/Rooms";
 import Contact from "./pages/Contact";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./parts/Footer";
-import { CSSTransition } from "react-transition-group";
 
 const AppWrap = styled.div``;
 
@@ -18,27 +17,16 @@ const routes = [
 ];
 
 function App() {
-  const onEnter = (node) => {
-    console.log(node.nextSibling.children[0].children[0]);
-  };
   return (
     <Router>
       <AppWrap>
-        {routes.map(({ path, Component, name }) => (
-          <Route key={name} path={path} exact>
-            {({ match }) => (
-              <CSSTransition
-                in={match != null}
-                timeout={1200}
-                classNames="main"
-                unmountOnExit
-                onEnter={onEnter}
-              >
-                <Component />
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
+        <Switch>
+          {routes.map(({ path, Component, name }) => (
+            <Route key={name} path={path} exact>
+              <Component />
+            </Route>
+          ))}
+        </Switch>
         <Footer />
       </AppWrap>
     </Router>
