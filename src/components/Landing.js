@@ -20,6 +20,9 @@ const LandingWrapper = styled.div`
     color: var(--white);
     @media ${device.mobileL} {
       transform: translateY(20rem);
+      @media ${device.mobileS} {
+        transform: translateY(50vh);
+      }
     }
 
     h1 {
