@@ -16,7 +16,7 @@ const PageLoad = styled.div`
     padding-top: 0px;
     padding-left: 0px;
     padding-right: 0px;
-    background-color: #12343b;
+    background-color: #05042e;
     width: 0%;
     height: 100%;
     text-align: center;
