@@ -39,16 +39,19 @@ function Rooms(props) {
 
   useEffect(() => {
     var tl = new TimelineMax();
-    console.log(screen.children[1]);
     tl.to(screen, {
       duration: 1.2,
       width: "100%",
       left: "0%",
       ease: Power3.easeInOut,
     });
+    tl.to(screen.children[1].firstElementChild, 0.1, {
+      opacity: 1,
+      ease: Power3.easeInOut,
+    });
     tl.staggerFrom(
       [screen.children[0], screen.children[1]],
-      0.8,
+      0.6,
       { height: 0, ease: Power2.easeInOut },
       0.4
     );
@@ -56,20 +59,20 @@ function Rooms(props) {
       [screen.children[0], screen.children[1]],
       0.6,
       { width: 0, ease: Power2.easeOut, delay: 0.5 },
-      0.1
+      0.2
     );
     tl.to(screen, {
       duration: 1,
       left: "100%",
       ease: Power3.easeInOut,
-      delay: 0.5,
+      delay: -0.6,
     });
     tl.set(screen, { left: "-100%" });
     TweenMax.to(body, 0.6, {
       css: {
         opacity: "1",
-        filter: "blur(0)",
         pointerEvents: "auto",
+        transitionDelay: "0.8",
         ease: Power4.easeInOut,
       },
     }).delay(-3);
@@ -155,7 +158,7 @@ function Rooms(props) {
             <img src={logo} alt="Grand Hotel Nova" />
           </div>
           <div className="text">
-            <h1>Contact</h1>
+            <h1>Rooms</h1>
           </div>
         </div>
       </PageLoad>

@@ -12,6 +12,12 @@ const NavWrapper = styled.div`
   display: flex;
   background: var(--white);
   z-index: 4;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0);
+  transition: all 1s;
+  &.scroll {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+    transition: all 1s;
+  }
 
   .logo {
     width: fit-content;
@@ -127,8 +133,19 @@ const NavWrapper = styled.div`
 
 function Navigation() {
   const [nav, setnav] = useState(false);
+  const [scroll, setscroll] = useState(false);
+
   let menu = useRef(null);
   let btn = useRef(null);
+
+  const addShadow = () => {
+    if (window.scrollY >= 800) {
+      setscroll(true);
+    } else {
+      setscroll(false);
+    }
+  };
+  window.addEventListener("scroll", addShadow);
 
   useEffect(() => {
     if (nav) {
@@ -141,7 +158,7 @@ function Navigation() {
   }, [nav]);
 
   return (
-    <NavWrapper>
+    <NavWrapper className={scroll ? "scroll" : ""}>
       <div className="logo">
         <NavLink to="/">
           <img src={logo} alt="Hotel Logo" />

@@ -185,7 +185,7 @@ function Facilities(props) {
             <img src={logo} alt="Grand Hotel Nova" />
           </div>
           <div className="text">
-            <h1>Contact</h1>
+            <h1>Facilities</h1>
           </div>
         </div>
       </PageLoad>

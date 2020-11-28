@@ -36,6 +36,23 @@ body {
   overflow-x: hidden;
 }
 
+@media only screen and (min-width: 1700px) {
+  :root {
+    --padding: 8rem;
+    --title-size: 2.2rem;
+  }
+  html {
+    font-size: 110%;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fefefe;
+    overflow-x: hidden;
+    padding: 0 13vw;
+  }
+}
+
 @media only screen and (max-width: 1020px) {
   :root {
     --padding: 4rem;
@@ -56,10 +73,10 @@ body {
 
 @media only screen and (max-width: 600px) {
   :root {
-    --padding: 1.8rem;
-    --title-size: 2.8rem;
+    --padding: 1.5rem;
+    --title-size: 2.2rem;
   }
   html {
-    font-size: 84%;
+    font-size: 83%;
   }
 }

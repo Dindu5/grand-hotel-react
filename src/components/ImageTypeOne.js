@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 import { device } from "../utilities/breakpoint";
+import { Power3, gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const ImageContainer = styled.div`
   position: relative;
@@ -44,11 +46,40 @@ const ImageContainer = styled.div`
 `;
 
 function ImageTypeOne(props) {
+  let images = useRef(null);
+
+  useEffect(() => {
+    const newImages = Array.from(images.children);
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.core.globals("ScrollTrigger", ScrollTrigger);
+
+    newImages.forEach((el) => {
+      gsap.from(el, 1.6, {
+        opacity: 0,
+        y: 30,
+        transformOrigin: "left",
+        ease: Power3.easeOut,
+        delay: 0.4,
+
+        scrollTrigger: {
+          trigger: el,
+          start: "top center+=150",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+  }, []);
+
   return (
     <ImageContainer alternate={props.alternate}>
       <img src={props.img1} alt="Room" />
 
-      <div className="image-boxes">
+      <div
+        className="image-boxes"
+        ref={(el) => {
+          images = el;
+        }}
+      >
         <div className="image-box">
           <img src={props.img2} alt="Hotel View" />
         </div>

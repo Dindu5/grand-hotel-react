@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Toptitle from "../components/Toptitle";
 import styled from "styled-components";
 import Intro from "../components/Intro";
@@ -7,6 +7,9 @@ import img2 from "../assets/aboutimg2.jpg";
 import img3 from "../assets/aboutimg3.jpg";
 import img4 from "../assets/aboutimg4.jpg";
 import { device } from "../utilities/breakpoint";
+
+import { Power3, gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const AboutWrap = styled.section`
   padding: 6rem var(--padding);
@@ -64,6 +67,30 @@ const AboutWrap = styled.section`
 `;
 
 function Home1() {
+  let images = useRef(null);
+
+  useEffect(() => {
+    const newImages = Array.from(images.children);
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.core.globals("ScrollTrigger", ScrollTrigger);
+
+    newImages.forEach((el) => {
+      gsap.from(el, 1.2, {
+        opacity: 0,
+        y: 40,
+        scale: 1.1,
+        transformOrigin: "left",
+        ease: Power3.easeOut,
+        delay: 0.4,
+
+        scrollTrigger: {
+          trigger: el,
+          start: "top center+=150",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+  }, []);
   return (
     <AboutWrap>
       <div>
@@ -73,7 +100,12 @@ function Home1() {
           sub="Welcome to Grand Hotel Nova We offer class, comfort, hospitality and excitement. Welcome to paradise"
         />
       </div>
-      <div className="about-images">
+      <div
+        className="about-images"
+        ref={(el) => {
+          images = el;
+        }}
+      >
         <div className="img-one">
           <img src={img1} alt="About Us" />
         </div>

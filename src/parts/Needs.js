@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Intro from "../components/Intro";
 import styled from "styled-components";
 import img1 from "../assets/needimg1.jpg";
 import img2 from "../assets/needimg2.jpg";
 import img3 from "../assets/needimg3.jpg";
 import { device } from "../utilities/breakpoint";
+
+import { Power3, gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const NeedWrap = styled.section`
   display: flex;
@@ -52,9 +55,38 @@ const NeedWrap = styled.section`
 `;
 
 function Needs() {
+  let images = useRef(null);
+
+  useEffect(() => {
+    const newImages = Array.from(images.children);
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.core.globals("ScrollTrigger", ScrollTrigger);
+
+    newImages.forEach((el) => {
+      gsap.from(el, 1.2, {
+        opacity: 0,
+        y: 40,
+        scale: 1.1,
+        transformOrigin: "left",
+        ease: Power3.easeOut,
+        delay: 0.4,
+
+        scrollTrigger: {
+          trigger: el,
+          start: "top center+=150",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+  }, []);
   return (
     <NeedWrap>
-      <div className="need-images">
+      <div
+        className="need-images"
+        ref={(el) => {
+          images = el;
+        }}
+      >
         <div className="img-contain">
           <img src={img1} alt="Home" />
         </div>

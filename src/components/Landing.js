@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { device } from "../utilities/breakpoint";
+import { TimelineLite, Power3 } from "gsap";
 
 const LandingWrapper = styled.div`
   height: 670px;
@@ -10,6 +11,9 @@ const LandingWrapper = styled.div`
   background-repeat: no-repeat;
   padding: var(--padding);
   background-position: center;
+  @media ${device.mobileS} {
+    height: 95vh;
+  }
 
   div {
     transform: translateY(13rem);
@@ -34,9 +38,32 @@ const LandingWrapper = styled.div`
 `;
 
 function Landing(props) {
+  let mainBox = useRef(null);
+
+  useEffect(() => {
+    let tl = new TimelineLite();
+
+    tl.staggerFrom(
+      mainBox.children,
+      0.6,
+      {
+        opacity: 0,
+        y: 20,
+        transformOrigin: "bottom",
+        overflow: "hidden",
+        ease: Power3.easeOut,
+        delay: 3.7,
+      },
+      0.2
+    );
+  }, []);
   return (
     <LandingWrapper img={props.img}>
-      <div>
+      <div
+        ref={(el) => {
+          mainBox = el;
+        }}
+      >
         <h1>{props.title}</h1>
         <h1>{props.secondTitle}</h1>
         <p>{props.subtitle}</p>
