@@ -4,6 +4,7 @@ import Button from "./Button";
 
 const FormWrap = styled.div`
   width: 100%;
+  font-family: var(--heading-font);
   input,
   textarea {
     border-radius: 2px;
@@ -11,6 +12,7 @@ const FormWrap = styled.div`
     padding: 0.8rem;
     border: none;
     margin: 1rem 0;
+    font-family: var(--heading-font);
   }
 `;
 

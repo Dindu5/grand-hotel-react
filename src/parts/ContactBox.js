@@ -34,6 +34,9 @@ const ContactWrap = styled.main`
       margin-top: -4rem;
       z-index:-1;
     }
+    @media ${device.mobileL} {
+     padding: 6rem var(--padding);
+    }
   }
 
   .aside {
