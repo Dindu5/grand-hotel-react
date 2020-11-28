@@ -14,7 +14,6 @@ import BlogArticles from "../parts/BlogArticles";
 
 // Assets
 
-import bg from "../assets/bg2.jpg";
 import Img1 from "../assets/fac12.jpg";
 import Img2 from "../assets/fac13.jpg";
 import Img3 from "../assets/fac14.jpg";
@@ -84,7 +83,7 @@ function Home(props) {
       <Main ref={(el) => (body = el)}>
         <Navigation />
         <Landing
-          img={bg}
+          img={props.bg.src}
           title="Its not perfect"
           secondTitle="Its Paradise"
           subtitle='You"re welcome to Grand Hotel Nova'

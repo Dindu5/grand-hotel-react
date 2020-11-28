@@ -15,7 +15,6 @@ import Main from "../components/Body";
 import PageLoad from "../components/PageLoad";
 
 // Assets
-import bg from "../assets/bg1.jpg";
 import room1 from "../assets/room1.jpg";
 import room2 from "../assets/room2.jpg";
 import room3 from "../assets/room3.jpg";
@@ -34,7 +33,7 @@ import room15 from "../assets/suite7.png";
 import room16 from "../assets/suite8.png";
 import logo from "../assets/logowhite.svg";
 
-function Rooms() {
+function Rooms(props) {
   let screen = useRef(null);
   let body = useRef(null);
 
@@ -89,7 +88,7 @@ function Rooms() {
       <Main ref={(el) => (body = el)}>
         <Navigation />
         <Landing
-          img={bg}
+          img={props.bg.src}
           title="Our Rooms are"
           secondTitle="Neat and Affordable"
           subtitle="Choose from our list of amazing accomodation"

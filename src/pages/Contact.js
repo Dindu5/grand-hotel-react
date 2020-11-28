@@ -1,6 +1,6 @@
 import React from "react";
 import Landing from "../components/Landing";
-import bg from "../assets/bg3.jpg";
+
 import Navigation from "../components/Navigation";
 import ContactBox from "../parts/ContactBox";
 import { TimelineMax, Power3, Power2, TweenMax, Power4 } from "gsap";
@@ -9,7 +9,7 @@ import logo from "../assets/logowhite.svg";
 import Main from "../components/Body";
 import PageLoad from "../components/PageLoad";
 
-function Contact() {
+function Contact(props) {
   let screen = useRef(null);
   let body = useRef(null);
   useEffect(() => {
@@ -65,7 +65,7 @@ function Contact() {
       <Main ref={(el) => (body = el)}>
         <Navigation />
         <Landing
-          img={bg}
+          img={props.bg.src}
           title="We Are always"
           secondTitle="Ready to help you"
         />

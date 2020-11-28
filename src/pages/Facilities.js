@@ -14,7 +14,7 @@ import Navigation from "../components/Navigation";
 import DarkPageWrap from "../components/DarkPageWrap";
 
 // Assets
-import bg from "../assets/bg.jpg";
+
 import img1 from "../assets/fac1.jpg";
 import img2 from "../assets/fac2.jpg";
 import img3 from "../assets/fac3.jpg";
@@ -43,7 +43,7 @@ const Bg = styled.section`
   background-size: cover;
 `;
 
-function Facilities() {
+function Facilities(props) {
   let screen = useRef(null);
   let body = useRef(null);
   useEffect(() => {
@@ -99,7 +99,7 @@ function Facilities() {
       <Main ref={(el) => (body = el)}>
         <Navigation />
         <Landing
-          img={bg}
+          img={props.bg.src}
           title="Top-Notch Facilities"
           secondTitle="From sports to sightseeing"
           subtitle="We have it all"
